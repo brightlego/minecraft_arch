@@ -23,11 +23,53 @@
 </head>
 
 <body>
+  <script type="text/javascript" src="js/bundle.js" ></script>
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+  <div>
+    <form id="curve-params" onsubmit="return false;">
+      Point 1:
+      <div>
+        <label for="p1x">x: </label>
+        <input type="number" name="p1x" id="p1x" onchange="Src.update()" value="0"/>
 
+        <label for="p1y">y: </label>
+        <input type="number" name="p1y" id="p1y" onchange="Src.update()" value="0"/>
+      </div>
+
+      Point 2:
+      <div>
+        <label for="p2x">x: </label>
+        <input type="number" name="p2x" id="p2x" onchange="Src.update()" value="10"/>
+
+        <label for="p2y">y: </label>
+        <input type="number" name="p2y" id="p2y" onchange="Src.update()" value="0"/>
+      </div>
+
+      <label for="height">height: </label>
+      <input type="number" name="height" id="height" onchange="Src.update()" value="10"/>
+
+      <label for="useSlabs">use slabs: </label>
+      <input type="checkbox" name="useSlabs" id="useSlabs" onchange="Src.update()"/>
+
+      <label for="thickness">thickness: </label>
+      <input type="number" name="thickness" id="thickness" onchange="Src.update()" value="0"/>
+
+      <label for="curve-type">Curve Type</label>
+      <select name="curve-type" id="curve-type" onchange="Src.generateExtraParams(); Src.update()">
+        <option value="">--No curve types loaded--</option>
+      </select>
+    </form>
+    <form id="curve-bonus-params" name="curve-bonus-params" onsubmit="return false;"></form>
+  </div>
+
+  <div id="solutions">
+    <div id="solution1"></div>
+    <div id="solution2"></div>
+  </div>
+<script>
+  Src.onStart()
+</script>
 </body>
 
 </html>

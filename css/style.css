@@ -245,3 +245,41 @@ textarea {
   }
 }
 
+table.bitmap {
+  table-layout: fixed;
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+
+table.bitmap td {
+  border: 1px solid grey;
+  margin: 0;
+}
+
+td.bitmap-on {
+  background-color: black;
+}
+
+td.bitmap-off {
+  background-color: white;
+}
+
+div#solutions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+div#solution1 {
+  margin: 10% auto;
+  aspect-ratio: 1 / 1;
+  grid-column: 1;
+  grid-row: 1;
+}
+div#solution2 {
+  margin: 10% auto;
+  aspect-ratio: 1 / 1;
+  grid-column: 2;
+  grid-row: 1;
+}
